@@ -1,12 +1,12 @@
-## Welcome to GitHub Pages
+## Bem Vindo a N7
 
-You can use the [editor on GitHub](https://github.com/NewgateBR/NewgateBR.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Aqui irei compartilhar algumas coisas que estou estudando para quando eu futuramente precisar de algo especifico, estar tudo aqui documentado.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+O foco do blog será compartilhar assuntos como C++, Python, Machine Learning, e 3D, alem de alguns trabalhos do meu curso de pós graduação, com criptografia com SageMath, lógica com a linguagem funcinal Coq, e operações matemáticas com matrizes utilizando Octave.
 
 ### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Logo sai o Primeiro Post do Blog. Até lá
 
 ```markdown
 Syntax highlighted code block
