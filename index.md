@@ -11,9 +11,6 @@ Porém no estudo de machine learning se faz necessário aprender afundo como imp
 alguma modificação necessária.
 Nesta postagem veremos como implementar algumas das principais métricas de distâncias usadas em machine learning.
 
-```markdown
-Syntax highlighted code block
-
 Para implementarmos as distâncias necessitados da linguagem python junto com algumas bibliotecas.
 o exemplo apresentado aqui foi implementado em Python 3 (Jupyter Notebook) e as bibliotecas necessárias são:
 
@@ -23,7 +20,7 @@ import numpy as np # numpy para utilizar alguns métodos matemáticos necessári
 import math
 
 # Distancia de Euclides
-#Para realizar o calculo da distância Euclideana é necessário fazer o somatório entre a subtração em valor absoluto entre dois pontos distindos (D,D') da nossa base de dados assim tendo o valor mximo da nossa distância.
+Para realizar o calculo da distância Euclideana é necessário fazer o somatório entre a subtração em valor absoluto entre dois pontos distindos (D,D') da nossa base de dados assim tendo o valor mximo da nossa distância.
 para implementar precisamos primeiro verificar se o tamanho de x e y, que representam cada um todas as colunas da primeira linha e da segunda respectivamente.
 Após isso atribuimos a z o valor de x -z, e entamos fazemos o somatório como representado na imagem da fórmula da Distância Euclideana.
 
@@ -37,7 +34,8 @@ Após isso atribuimos a z o valor de x -z, e entamos fazemos o somatório como r
 
 ## Distancia de Manhattan
  Para realizar o cálculo da distância de Manhattan precisamos seguir a mesma lógica da distância euclideana, porém não precisamos elevar nosso z(x-y) ao quadrado.
-                                                                  def Manhattan(x,y):
+                                                                
+                                                                def Manhattan(x,y):
                                                                     if x.size != y.size:
                                                                         return (-1)
                                                                     z = y-x
@@ -45,10 +43,66 @@ Após isso atribuimos a z o valor de x -z, e entamos fazemos o somatório como r
                                                                     return diss
 
 
+Syntax highlighted code block
+
+## Distância de Chebyshev
+Para calcular a Distância de Chebyshev vamos utilizar a mesma estrutura de somatório dos modelos apresentados anteriormente, porém aqui utiliaremso o valor máximo de z.
+                                                               
+                                                               def Chebyshev(x,y):
+                                                                  if x.size != y.size:
+                                                                      return (-1)
+                                                                  z = y-x
+                                                                  diss = np.amax(z).sum()
+                                                                  return diss
+                                                                 
 
 
-### Header 3
 
+
+### Distância de Camberra
+Para calcular a distância de camberra iremos fazer o somatório do valor absoluto da subtração de x por y, pela soma do valor absoluto de x pelo valor absoluto de y, como é apresentado na figura com a fómula de Camberra.
+  
+                                                              def Camberra(x,y):
+                                                                if x.size != y.size:
+                                                                    return (-1)
+                                                                z = y-x
+                                                                diss = (np.fabs(z)/(np.fabs(x) + np.fabs(y))).sum()
+                                                                return diss;
+                                                                
+
+#### Distância de Cosine
+Para implementar a distância de Cosine é a que vai dar mais trabalho em relação as outras mais é muito simples de ser implementada também.
+A fórmula consiste no somatório de x multiplicado por y dividido pelo somatório da raiz de x elevado qo quadrado vezes o somatório da raiz de y ao quadrado como é apresentado na figura que representa a fórmula de cosine.
+
+                                                              def Cosine(x,y):
+                                                              if x.size != y.size:
+                                                                      return (-1)
+                                                                  z=x-y
+                                                                  numerador =np.dot(x,y)
+                                                                  #denominador = (math.sqrt(x**2).sum())*(math.sqrt(y**2).sum())
+                                                                  denominador = np.linalg.norm(x,2)*np.linalg.norm(y,2) #NORM E MATRIZ NORMALIZADA
+                                                                  diss =1- numerador/denominador
+                                                                  return diss;
+                                                                  
+ ## Resultados
+ Para compararmos os métodos implementados com os disponiveis na biblioteca scipy irei apresentar os resultados de cada uma
+ 
+                            print ('A distancia Euclideana é dist= %f, e do metodo da biblioteca é= %f' % (Euclidean(v1,v2), (dist.euclidean(v1,v2))))
+                            print(' A distância Manhattan é  dist=%f, the scipy one %f'% (Manhattan(v1,v2),dist.cityblock(v1, v2)))
+                            print (' A distancia de Chebyshev feita por mim é = %f, ja da biblioteca e: %f'% (Chebyshev(v1,v2), (dist.chebyshev(v1,v2))))
+                            print ('A minha distancia de Camberra é = %f, ja o da biblioteca é: %f' % (Camberra(v1,v2), (dist.canberra(v1,v2))))
+                            print ('A minha distância de Cosine e: %f, a distancia da biblioteca e: %f' % (Cosine(v1,v2), (dist.cosine(v1,v2))))
+                            
+                            A distancia Euclideana é dist= 196.987944, e do metodo da biblioteca scipy é= 196.987944
+                            A distância Manhattan é dist=270.500000, the scipy one 270.500000
+                            A distancia de Chebyshev feita por mim é = 189.000000, ja da biblioteca e: 189.000000
+                            A minha distancia de Camberra é = 0.322540, ja o da biblioteca é: 0.322540
+                            A minha distância de Cosine e: 0.000055, a distancia da biblioteca e: 0.000055
+                            
+                            
+                            
+ # POR ENQUANTO É ISTO MAIS IREI MOSSTRAR OS RESULTADOS EM GRÁFICO DESSAS FÓMULAS NE PROCIMA POSTAGEM.
+```markdown
 - Bulleted
 - List
 
