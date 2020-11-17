@@ -41,7 +41,7 @@ Syntax highlighted code block
 
 **Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](Euclidean.png)
+[Link](url) and ![](/Euclidean.png)
 ```
 
 
