@@ -1,13 +1,31 @@
 ## Bem Vindo a N7
 
-Aqui iregggi compartilhar algumas coisas que estou estudando para quando eu futuramente precisar de algo especifico, estar tudo aqui documentado.
+Aqui irei compartilhar algumas coisas que estou estudando para quando eu futuramente precisar de algo especifico, estar tudo aqui documentado.
 
 O foco do blog será compartilhar assuntos como C++, Python, Machine Learning, e 3D, alem de alguns trabalhos do meu curso de pós graduação, com criptografia com SageMath, lógica com a linguagem funcinal Coq, e operações matemáticas com matrizes utilizando Octave.
 
-### Markdown
+### Implementação manual de Distâncias (Euclideana, Manhattan, Chebyshev, Camberra e Cosine)
 
-Logo sai o Primeiro Post do Blog. Até lá
 
+```markdown
+Syntax highlighted code block
+
+# Distancia de Euclides
+A distância Euclideana
+## Header 2
+### Header 3
+
+- Bulleted
+- List
+
+1. Numbered
+2. List
+
+**Bold** and _Italic_ and `Code` text
+
+[Link](url) and ![Image](src)
+```
+### C ++
 ```markdown
 Syntax highlighted code block
 
@@ -23,8 +41,9 @@ Syntax highlighted code block
 
 **Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
+[Link](url) and ![Image](Euclidean.png)
 ```
+
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
